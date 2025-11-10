@@ -64,7 +64,7 @@ export function AboutSection() {
   };
 
   return (
-    <section ref={sectionRef} className="w-full px-8 py-32">
+    <section ref={sectionRef} className="w-full px-8 pt-48 pb-40">
       <div className="max-w-[1600px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Content - Text with Line-by-Line Fill Effect */}
