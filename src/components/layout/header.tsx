@@ -1,21 +1,41 @@
 /**
  * Header Component
- * 
+ *
  * Implements the top navigation bar with:
  * - Left: "Mitchy" logo/brand
  * - Center: Navigation menu items (Home, Work, About, Service, Blog, Contact)
  * - Right: Pages dropdown and "Book a Call" CTA button
- * 
+ *
  * All items use pill-shaped buttons with borders and hover states.
  * The CTA button has an orange background to stand out.
  */
 
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 w-full py-4 px-8 bg-bg-primary z-50 backdrop-blur-sm bg-opacity-95">
+    <header
+      className={`fixed top-0 left-0 right-0 w-full py-4 px-8 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-[#EEE9E3]/95 backdrop-blur-md shadow-lg"
+          : "bg-[#EEE9E3]/90 backdrop-blur-sm"
+      }`}
+    >
       <div className="max-w-[1600px] mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">

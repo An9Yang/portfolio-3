@@ -15,9 +15,9 @@ import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="w-full px-8 py-6 pb-12">
+    <section className="w-full px-6 py-8 pb-12 md:px-8 md:py-10 lg:pb-16">
       <div className="max-w-[1600px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-10 lg:gap-12 items-start">
           {/* Left Content - Description */}
           <div className="lg:col-span-3 space-y-5 pt-1 animate-fade-in-up">
             <a

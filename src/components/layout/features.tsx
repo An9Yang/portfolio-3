@@ -11,10 +11,10 @@
 
 export function Features() {
   return (
-    <section className="w-full px-8 pt-12 pb-16">
+    <section className="w-full px-6 pt-12 pb-14 md:px-8 md:pt-14 md:pb-16 lg:pt-16 lg:pb-20">
       <div className="max-w-[1600px] mx-auto">
         {/* Three Headlines */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-10">
           <div className="animate-slide-in-left">
             <h3 className="text-brand-primary text-xl md:text-2xl font-bold tracking-wide uppercase transition-all duration-300 hover:tracking-wider">
               PUSH LIMITS
