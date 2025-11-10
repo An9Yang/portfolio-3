@@ -151,13 +151,33 @@ export function BenefitsStack() {
 
   const getCardStyles = (index: number) => {
     const total = BENEFITS.length;
-    const segmentProgress = clamp(scrollProgress * total - (index + 1));
-    const translateY = -STACK_PEEK * segmentProgress;
+
+    // Calculate when each card should start moving up
+    // Card 0 starts at 0, Card 1 at 0.33, Card 2 at 0.66
+    const cardStartProgress = index / total;
+    const cardEndProgress = (index + 1) / total;
+
+    // Individual card progress: 0 = hasn't started, 1 = fully positioned
+    const cardProgress = clamp(
+      (scrollProgress - cardStartProgress) / (cardEndProgress - cardStartProgress),
+      0,
+      1
+    );
+
+    // CRITICAL: Later cards need LOWER top values to cover earlier cards
+    // Card 0: top = 96px + (2 * 72) = 240px (bottom position)
+    // Card 1: top = 96px + (1 * 72) = 168px (middle position, covers card 0)
+    // Card 2: top = 96px + (0 * 72) = 96px (top position, covers card 1 & 0)
+    const stackOffset = (total - 1 - index) * STACK_PEEK;
+
+    // Cards move up from below (positive translateY to 0)
+    // Starting from 400px below their final position
+    const translateY = (1 - cardProgress) * 400;
 
     return {
       transform: `translate3d(0, ${translateY}px, 0)`,
-      zIndex: total - index,
-      top: `${STICKY_OFFSET_REM}rem`,
+      zIndex: index, // Higher index = higher z-index, so later cards cover earlier ones
+      top: `calc(${STICKY_OFFSET_REM}rem + ${stackOffset}px)`,
     };
   };
 
