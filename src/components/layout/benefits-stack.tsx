@@ -184,21 +184,21 @@ export function BenefitsStack() {
   return (
     <section
       ref={containerRef}
-      className="w-full bg-[#050505] py-20 text-white lg:min-h-[200vh] lg:py-32"
+      className="w-full bg-[#0A0A0A] py-20 text-white lg:min-h-[200vh] lg:py-32"
     >
       <div className="mx-auto max-w-[1400px] px-6 lg:h-full lg:px-12">
         <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2 lg:gap-24">
           {/* Left rail */}
-          <div className="space-y-6 lg:sticky lg:top-24">
-            <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-white/70">
-              <span className="inline-block h-2 w-2 rounded-full bg-[#f43c00]" />
+          <div className="space-y-6 lg:sticky lg:top-24 animate-fade-in-up">
+            <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.25em] text-white/80">
+              <span className="inline-block h-2 w-2 rounded-full bg-brand-primary animate-pulse" />
               Web Development
             </div>
-            <h2 className="text-4xl font-semibold leading-tight text-white md:text-5xl lg:text-6xl">
+            <h2 className="text-4xl font-semibold leading-tight text-white md:text-5xl lg:text-6xl transition-all duration-500">
               Ready to unlock these incredible{" "}
-              <span className="text-white/30">subscription benefits?</span>
+              <span className="text-white/30 transition-colors duration-300 hover:text-white/50">subscription benefits?</span>
             </h2>
-            <p className="max-w-md text-base leading-relaxed text-white/65">
+            <p className="max-w-md text-base leading-relaxed text-white/70 transition-colors duration-200 hover:text-white/85">
               At the heart of our design process is a commitment to actively
               listen and understand your unique challenges and needs.
             </p>

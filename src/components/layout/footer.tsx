@@ -28,24 +28,24 @@ function SocialIcon({ icon: Icon, label }: { icon: any; label: string }) {
     <a
       href="#"
       aria-label={label}
-      className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 text-white transition-all duration-300 hover:scale-110 hover:border-white/40 hover:bg-white/10"
+      className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/25 text-white transition-all duration-300 hover:scale-110 hover:border-white hover:bg-white hover:text-brand-primary active:scale-95 hover:shadow-lg"
     >
-      <Icon className="h-5 w-5" />
+      <Icon className="h-5 w-5 transition-transform duration-300" />
     </a>
   );
 }
 
 export function Footer() {
   return (
-    <footer className="w-full bg-black px-6 py-12 md:px-8 md:py-16 lg:px-12 lg:py-20">
+    <footer className="w-full bg-neutral-black px-6 py-12 md:px-8 md:py-16 lg:px-12 lg:py-20">
       <div className="mx-auto max-w-[1400px]">
-        <div className="overflow-hidden rounded-[48px] bg-[#ff4800] px-8 py-12 md:px-12 md:py-16 lg:px-16 lg:py-20">
+        <div className="overflow-hidden rounded-3xl bg-[#FF4500] px-8 py-12 md:px-12 md:py-16 lg:px-16 lg:py-20 shadow-2xl">
           {/* Top Section */}
           <div className="grid grid-cols-1 gap-12 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_auto] lg:gap-8 lg:pb-16">
             {/* Column 1: Copyright + CTA */}
             <div className="flex flex-col gap-8">
               <p className="text-base font-medium text-white">©Mitchy 2025</p>
-              <button className="w-fit rounded-full bg-white px-8 py-4 text-base font-semibold text-black transition-all duration-300 hover:scale-105 hover:shadow-lg">
+              <button className="w-fit rounded-full bg-white px-8 py-4 text-base font-bold text-neutral-black transition-all duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-0.5 active:scale-95">
                 Get Started Today
               </button>
             </div>
@@ -54,13 +54,13 @@ export function Footer() {
             <div className="flex flex-col gap-3 text-white">
               <a
                 href={`tel:${CONTACT_INFO.phone}`}
-                className="text-base font-medium transition-opacity hover:opacity-70"
+                className="text-base font-medium transition-all duration-200 hover:translate-x-1 hover:text-white/90"
               >
                 {CONTACT_INFO.phone}
               </a>
               <a
                 href={`mailto:${CONTACT_INFO.email}`}
-                className="text-base font-medium transition-opacity hover:opacity-70"
+                className="text-base font-medium transition-all duration-200 hover:translate-x-1 hover:text-white/90"
               >
                 {CONTACT_INFO.email}
               </a>
@@ -133,36 +133,15 @@ export function Footer() {
                 POWERED BY WEBFLOW.
               </p>
 
-              {/* Right: Social Icons + Badge */}
-              <div className="flex flex-col items-start gap-6 md:items-end">
-                {/* Social Icons */}
-                <div className="flex gap-3">
-                  {SOCIAL_LINKS.map((social) => (
-                    <SocialIcon
-                      key={social.label}
-                      icon={social.icon}
-                      label={social.label}
-                    />
-                  ))}
-                </div>
-
-                {/* Made in Webflow Badge */}
-                <div className="flex items-center gap-2 rounded-md bg-white px-3 py-2">
-                  <svg
-                    className="h-5 w-5"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M24.7 8.7c-2.4 0-4.3 1.5-5.2 3.8-.9-2.3-2.8-3.8-5.2-3.8-3.1 0-5.6 2.5-5.6 5.6 0 4.5 5.6 8.7 10.8 11.6 5.2-2.9 10.8-7.1 10.8-11.6 0-3.1-2.5-5.6-5.6-5.6z"
-                      fill="#4353FF"
-                    />
-                  </svg>
-                  <span className="text-sm font-semibold text-black">
-                    Made in Webflow
-                  </span>
-                </div>
+              {/* Right: Social Icons */}
+              <div className="flex gap-3">
+                {SOCIAL_LINKS.map((social) => (
+                  <SocialIcon
+                    key={social.label}
+                    icon={social.icon}
+                    label={social.label}
+                  />
+                ))}
               </div>
             </div>
           </div>

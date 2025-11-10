@@ -66,24 +66,25 @@ function ProjectCard({ project }: { project: Project }) {
     project.aspect === "wide" ? "aspect-[4/3]" : "aspect-[5/4]";
 
   return (
-    <article className="group overflow-hidden rounded-[32px] border border-black/5 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.06)] transition-all duration-500 hover:-translate-y-1">
+    <article className="group overflow-hidden rounded-xl border border-black/5 bg-white shadow-card hover:shadow-cardHover transition-all duration-500 hover:-translate-y-2">
       <div className={`relative overflow-hidden ${aspectClass}`}>
         <img
           src={project.image}
           alt={project.imageAlt}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       </div>
       <div className="flex items-end justify-between gap-6 px-6 pb-7 pt-6 md:px-8">
-        <h3 className="text-lg font-semibold text-black md:text-xl">
+        <h3 className="text-lg font-semibold text-black md:text-xl transition-colors duration-200 group-hover:text-brand-primary">
           {project.title}
         </h3>
         <div className="flex flex-col items-end text-right text-black">
           <span className="text-base font-semibold md:text-lg">
             {project.year}
           </span>
-          <span className="text-xs font-medium text-black/60 md:text-sm">
+          <span className="text-xs font-medium text-black/65 md:text-sm">
             {project.category}
           </span>
         </div>
@@ -94,8 +95,8 @@ function ProjectCard({ project }: { project: Project }) {
 
 function QuoteCard() {
   return (
-    <div className="rounded-[32px] bg-[#e6e2dc] px-8 py-14 md:px-10 md:py-16 lg:min-h-[320px]">
-      <p className="text-3xl font-light leading-tight text-black/30 md:text-4xl lg:text-[48px]">
+    <div className="group rounded-xl bg-bg-tertiary px-8 py-14 md:px-10 md:py-16 lg:min-h-[320px] shadow-md hover:shadow-lg transition-all duration-500 hover:-translate-y-1">
+      <p className="text-3xl font-light leading-tight text-black/35 md:text-4xl lg:text-[48px] transition-colors duration-300 group-hover:text-black/50">
         {QUOTE_TEXT}
       </p>
     </div>
@@ -104,16 +105,16 @@ function QuoteCard() {
 
 function IntroCard() {
   return (
-    <div className="rounded-[32px] border border-black/5 bg-white px-8 py-12 shadow-[0_20px_60px_rgba(15,23,42,0.06)] md:px-10 md:py-14">
-      <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.35em] text-black/70">
-        <span className="inline-flex h-2 w-2 rounded-full bg-[#f43c00]" />
+    <div className="rounded-xl border border-black/5 bg-white px-8 py-12 shadow-card md:px-10 md:py-14 animate-fade-in-up">
+      <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.35em] text-black/75">
+        <span className="inline-flex h-2 w-2 rounded-full bg-brand-primary animate-pulse" />
         {FEATURED_COPY.label}
       </div>
-      <h2 className="mt-6 text-3xl font-semibold leading-[1.15] text-black md:text-4xl lg:text-[50px]">
+      <h2 className="mt-6 text-3xl font-semibold leading-[1.15] text-black md:text-4xl lg:text-[50px] transition-colors duration-300">
         {FEATURED_COPY.tagline}{" "}
-        <span className="text-black/25">{FEATURED_COPY.emphasis}</span>
+        <span className="text-black/30 transition-colors duration-300 hover:text-black/45">{FEATURED_COPY.emphasis}</span>
       </h2>
-      <p className="mt-6 max-w-md text-base leading-relaxed text-black/65 md:text-lg">
+      <p className="mt-6 max-w-md text-base leading-relaxed text-black/70 md:text-lg transition-colors duration-200 hover:text-black/85">
         {FEATURED_COPY.body}
       </p>
     </div>
