@@ -11,6 +11,7 @@
 
 import { Header } from "@/components/layout/header";
 import { Hero } from "@/components/layout/hero";
+import { ScrollingBanner } from "@/components/layout/scrolling-banner";
 import { Features } from "@/components/layout/features";
 
 export default function Index() {
@@ -19,6 +20,7 @@ export default function Index() {
       <Header />
       <Hero />
       <Features />
+      <ScrollingBanner />
     </div>
   );
 }
