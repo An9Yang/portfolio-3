@@ -16,6 +16,7 @@ import { Features } from "@/components/layout/features";
 import { AboutSection } from "@/components/layout/about-section";
 import { LogoMarquee } from "@/components/layout/logo-marquee";
 import { ServicesCard } from "@/components/layout/services-card";
+import { Testimonials } from "@/components/layout/testimonials";
 
 export default function Index() {
   return (
@@ -28,6 +29,7 @@ export default function Index() {
       <AboutSection />
       <LogoMarquee />
       <ServicesCard />
+      <Testimonials />
       </div>
     </div>
   );

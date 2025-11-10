@@ -22,9 +22,9 @@ export function LogoMarquee() {
 
   return (
     <section className="w-full overflow-hidden py-8 border-y border-black/10">
-      <div className="relative flex">
+      <div className="flex animate-scroll-left">
         {/* First set of logos */}
-        <div className="flex shrink-0 items-center gap-0 animate-scroll-left">
+        <div className="flex shrink-0 items-center">
           {logos.map((logo, index) => (
             <div key={`first-${index}`} className="flex items-center">
               <div className="px-12 md:px-16">
@@ -40,7 +40,7 @@ export function LogoMarquee() {
         </div>
 
         {/* Second set of logos for seamless loop */}
-        <div className="flex shrink-0 items-center gap-0 animate-scroll-left">
+        <div className="flex shrink-0 items-center">
           {logos.map((logo, index) => (
             <div key={`second-${index}`} className="flex items-center">
               <div className="px-12 md:px-16">

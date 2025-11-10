@@ -31,15 +31,15 @@ export function ScrollingBanner() {
 
   return (
     <section className="w-full overflow-hidden bg-background py-8 border-y border-black/10">
-      <div className="relative flex">
+      <div className="flex animate-scroll-left">
         {/* First set of items */}
-        <div className="flex shrink-0 items-center justify-around gap-8 animate-scroll-left">
+        <div className="flex shrink-0 items-center">
           {ITEMS.map((item, index) => (
-            <div key={`first-${index}`} className="flex items-center gap-8 whitespace-nowrap">
-              <span className="text-5xl md:text-7xl font-black tracking-tight uppercase">
+            <div key={`first-${index}`} className="flex items-center px-4">
+              <span className="text-5xl md:text-7xl font-black tracking-tight uppercase whitespace-nowrap">
                 {item}
               </span>
-              <span className="text-5xl md:text-7xl font-black text-[#f43c00]">
+              <span className="text-5xl md:text-7xl font-black text-[#f43c00] mx-4">
                 •
               </span>
             </div>
@@ -47,13 +47,13 @@ export function ScrollingBanner() {
         </div>
 
         {/* Second set of items for seamless loop */}
-        <div className="flex shrink-0 items-center justify-around gap-8 animate-scroll-left">
+        <div className="flex shrink-0 items-center">
           {ITEMS.map((item, index) => (
-            <div key={`second-${index}`} className="flex items-center gap-8 whitespace-nowrap">
-              <span className="text-5xl md:text-7xl font-black tracking-tight uppercase">
+            <div key={`second-${index}`} className="flex items-center px-4">
+              <span className="text-5xl md:text-7xl font-black tracking-tight uppercase whitespace-nowrap">
                 {item}
               </span>
-              <span className="text-5xl md:text-7xl font-black text-[#f43c00]">
+              <span className="text-5xl md:text-7xl font-black text-[#f43c00] mx-4">
                 •
               </span>
             </div>
