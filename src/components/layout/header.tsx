@@ -15,48 +15,50 @@ import { ChevronDown } from "lucide-react";
 
 export function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 w-full py-4 px-8 bg-[#eee9e3] z-50">
+    <header className="fixed top-0 left-0 right-0 w-full py-4 px-8 bg-bg-primary z-50 backdrop-blur-sm bg-opacity-95">
       <div className="max-w-[1600px] mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
-          <h1 className="text-2xl font-bold text-foreground">Mitchy.</h1>
+          <h1 className="text-2xl font-bold text-foreground transition-colors duration-200 hover:text-brand-primary cursor-pointer">
+            Mitchy.
+          </h1>
         </div>
 
         {/* Center Navigation */}
         <nav className="hidden lg:flex items-center gap-2">
           <Button
             variant="outline"
-            className="rounded-full px-5 py-2 h-auto text-sm border-foreground/10 hover:bg-foreground/5 bg-white/50"
+            className="rounded-full px-5 py-2 h-auto text-sm font-medium border-neutral-black/10 hover:border-brand-primary/30 hover:bg-white hover:shadow-sm bg-white/70 backdrop-blur-sm transition-all duration-200"
           >
             Home
           </Button>
           <Button
             variant="outline"
-            className="rounded-full px-5 py-2 h-auto text-sm border-foreground/10 hover:bg-foreground/5 bg-white/50"
+            className="rounded-full px-5 py-2 h-auto text-sm font-medium border-neutral-black/10 hover:border-brand-primary/30 hover:bg-white hover:shadow-sm bg-white/70 backdrop-blur-sm transition-all duration-200"
           >
             Work
           </Button>
           <Button
             variant="outline"
-            className="rounded-full px-5 py-2 h-auto text-sm border-foreground/10 hover:bg-foreground/5 bg-white/50"
+            className="rounded-full px-5 py-2 h-auto text-sm font-medium border-neutral-black/10 hover:border-brand-primary/30 hover:bg-white hover:shadow-sm bg-white/70 backdrop-blur-sm transition-all duration-200"
           >
             About
           </Button>
           <Button
             variant="outline"
-            className="rounded-full px-5 py-2 h-auto text-sm border-foreground/10 hover:bg-foreground/5 bg-white/50"
+            className="rounded-full px-5 py-2 h-auto text-sm font-medium border-neutral-black/10 hover:border-brand-primary/30 hover:bg-white hover:shadow-sm bg-white/70 backdrop-blur-sm transition-all duration-200"
           >
             Service
           </Button>
           <Button
             variant="outline"
-            className="rounded-full px-5 py-2 h-auto text-sm border-foreground/10 hover:bg-foreground/5 bg-white/50"
+            className="rounded-full px-5 py-2 h-auto text-sm font-medium border-neutral-black/10 hover:border-brand-primary/30 hover:bg-white hover:shadow-sm bg-white/70 backdrop-blur-sm transition-all duration-200"
           >
             Blog
           </Button>
           <Button
             variant="outline"
-            className="rounded-full px-5 py-2 h-auto text-sm border-foreground/10 hover:bg-foreground/5 bg-white/50"
+            className="rounded-full px-5 py-2 h-auto text-sm font-medium border-neutral-black/10 hover:border-brand-primary/30 hover:bg-white hover:shadow-sm bg-white/70 backdrop-blur-sm transition-all duration-200"
           >
             Contact
           </Button>
@@ -66,13 +68,13 @@ export function Header() {
         <div className="flex items-center gap-2">
           <Button
             variant="outline"
-            className="rounded-full px-5 py-2 h-auto text-sm border-foreground/10 hover:bg-foreground/5 bg-white/50 flex items-center gap-2"
+            className="rounded-full px-5 py-2 h-auto text-sm font-medium border-neutral-black/10 hover:border-brand-primary/30 hover:bg-white hover:shadow-sm bg-white/70 backdrop-blur-sm flex items-center gap-2 transition-all duration-200"
           >
             Pages
-            <ChevronDown className="w-4 h-4" />
+            <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:translate-y-0.5" />
           </Button>
           <Button
-            className="rounded-full px-6 py-2.5 h-auto bg-[#f43c00] hover:bg-[#f43c00]/90 text-white font-medium text-sm"
+            className="rounded-full px-6 py-2.5 h-auto bg-brand-primary hover:bg-brand-primaryHover text-white font-semibold text-sm shadow-button hover:shadow-buttonHover hover:-translate-y-0.5 transition-all duration-200 active:scale-95"
           >
             Book a Call
           </Button>

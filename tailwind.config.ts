@@ -1,5 +1,6 @@
 import tailwindAnimate from "tailwindcss-animate";
 import type { Config } from "tailwindcss";
+import { colors, borderRadius, shadows, transitions } from "./src/design/tokens";
 
 const config: Config = {
   darkMode: ["class"],
@@ -14,6 +15,14 @@ const config: Config = {
     },
     extend: {
       colors: {
+        // Brand colors from design tokens
+        brand: colors.brand,
+        // Neutral colors
+        neutral: colors.neutral,
+        // Background colors
+        bg: colors.background,
+
+        // Keep existing shadcn colors for compatibility
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -66,10 +75,15 @@ const config: Config = {
         },
       },
       borderRadius: {
+        ...borderRadius,
+        // Keep shadcn compatibility
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: shadows,
+      transitionDuration: transitions.duration,
+      transitionTimingFunction: transitions.timing,
       keyframes: {
         "accordion-down": {
           from: {
@@ -87,10 +101,58 @@ const config: Config = {
             height: "0",
           },
         },
+        // Smooth fade in from bottom
+        "fade-in-up": {
+          from: {
+            opacity: "0",
+            transform: "translateY(20px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        // Subtle scale animation
+        "scale-in": {
+          from: {
+            opacity: "0",
+            transform: "scale(0.95)",
+          },
+          to: {
+            opacity: "1",
+            transform: "scale(1)",
+          },
+        },
+        // Slide in from left
+        "slide-in-left": {
+          from: {
+            opacity: "0",
+            transform: "translateX(-20px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+        },
+        // Slide in from right
+        "slide-in-right": {
+          from: {
+            opacity: "0",
+            transform: "translateX(20px)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in-up": "fade-in-up 0.5s ease-out",
+        "scale-in": "scale-in 0.3s ease-out",
+        "slide-in-left": "slide-in-left 0.4s ease-out",
+        "slide-in-right": "slide-in-right 0.4s ease-out",
       },
     },
   },
