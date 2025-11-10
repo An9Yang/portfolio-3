@@ -13,6 +13,8 @@ import { Header } from "@/components/layout/header";
 import { Hero } from "@/components/layout/hero";
 import { ScrollingBanner } from "@/components/layout/scrolling-banner";
 import { Features } from "@/components/layout/features";
+import { AboutSection } from "@/components/layout/about-section";
+import { LogoMarquee } from "@/components/layout/logo-marquee";
 
 export default function Index() {
   return (
@@ -21,6 +23,8 @@ export default function Index() {
       <Hero />
       <Features />
       <ScrollingBanner />
+      <AboutSection />
+      <LogoMarquee />
     </div>
   );
 }
