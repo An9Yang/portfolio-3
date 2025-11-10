@@ -17,6 +17,7 @@ import { AboutSection } from "@/components/layout/about-section";
 import { LogoMarquee } from "@/components/layout/logo-marquee";
 import { ServicesCard } from "@/components/layout/services-card";
 import { Testimonials } from "@/components/layout/testimonials";
+import { BenefitsStack } from "@/components/layout/benefits-stack";
 
 export default function Index() {
   return (
@@ -30,6 +31,7 @@ export default function Index() {
       <LogoMarquee />
       <ServicesCard />
       <Testimonials />
+      <BenefitsStack />
       </div>
     </div>
   );
