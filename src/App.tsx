@@ -15,6 +15,11 @@ const BlogPage = lazy(() => import("./pages/blog"));
 const ContactPage = lazy(() => import("./pages/contact"));
 const ProjectDetailPage = lazy(() => import("./pages/project-detail"));
 const BlogDetailPage = lazy(() => import("./pages/blog-detail"));
+const PrivacyPolicyPage = lazy(() => import("./pages/privacy-policy"));
+const TermsOfServicePage = lazy(() => import("./pages/terms-of-service"));
+const StyleguidePage = lazy(() => import("./pages/styleguide"));
+const ChangelogPage = lazy(() => import("./pages/changelog"));
+const LicensePage = lazy(() => import("./pages/license"));
 const NotFound = lazy(() => import("./pages/404"));
 
 const queryClient = new QueryClient();
@@ -48,6 +53,11 @@ const App = () => (
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/project/:id" element={<ProjectDetailPage />} />
             <Route path="/blog/:id" element={<BlogDetailPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+            <Route path="/styleguide" element={<StyleguidePage />} />
+            <Route path="/changelog" element={<ChangelogPage />} />
+            <Route path="/license" element={<LicensePage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
