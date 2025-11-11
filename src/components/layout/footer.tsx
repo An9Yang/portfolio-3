@@ -1,9 +1,24 @@
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const FOOTER_NAV = {
-  main: ["Home", "About us", "Service", "Works", "Blogs"],
-  secondary: ["404", "Styleguide", "License", "Changelog"],
-  legal: ["Privacy policy", "Terms of service"],
+  main: [
+    { label: "Home", href: "/" },
+    { label: "About us", href: "/about" },
+    { label: "Service", href: "/services" },
+    { label: "Works", href: "/work" },
+    { label: "Blogs", href: "/blog" },
+  ],
+  secondary: [
+    { label: "404", href: "/404-page" },
+    { label: "Styleguide", href: "/styleguide" },
+    { label: "License", href: "/license" },
+    { label: "Changelog", href: "/changelog" },
+  ],
+  legal: [
+    { label: "Privacy policy", href: "/privacy-policy" },
+    { label: "Terms of service", href: "/terms-of-service" },
+  ],
 };
 
 const CONTACT_INFO = {
@@ -17,16 +32,18 @@ const CONTACT_INFO = {
 };
 
 const SOCIAL_LINKS = [
-  { icon: Facebook, label: "Facebook", href: "#" },
-  { icon: Twitter, label: "Twitter", href: "#" },
-  { icon: Linkedin, label: "LinkedIn", href: "#" },
-  { icon: Instagram, label: "Instagram", href: "#" },
+  { icon: Facebook, label: "Facebook", href: "https://facebook.com", external: true },
+  { icon: Twitter, label: "Twitter", href: "https://twitter.com", external: true },
+  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com", external: true },
+  { icon: Instagram, label: "Instagram", href: "https://instagram.com", external: true },
 ];
 
-function SocialIcon({ icon: Icon, label }: { icon: any; label: string }) {
+function SocialIcon({ icon: Icon, label, href }: { icon: any; label: string; href: string }) {
   return (
     <a
-      href="#"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label={label}
       className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/25 text-white transition-all duration-300 hover:scale-110 hover:border-white hover:bg-white hover:text-brand-primary active:scale-95 hover:shadow-lg"
     >
@@ -45,9 +62,11 @@ export function Footer() {
             {/* Column 1: Copyright + CTA */}
             <div className="flex flex-col gap-8">
               <p className="text-base font-medium text-white">©Mitchy 2025</p>
-              <button className="w-fit rounded-full bg-white px-8 py-4 text-base font-bold text-neutral-black transition-all duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-0.5 active:scale-95">
-                Get Started Today
-              </button>
+              <Link to="/contact">
+                <button className="w-fit rounded-full bg-white px-8 py-4 text-base font-bold text-neutral-black transition-all duration-300 hover:scale-105 hover:shadow-xl hover:-translate-y-0.5 active:scale-95">
+                  Get Started Today
+                </button>
+              </Link>
             </div>
 
             {/* Column 2: Contact Info */}
@@ -76,39 +95,39 @@ export function Footer() {
             {/* Column 3: Main Nav */}
             <div className="flex flex-col gap-3">
               {FOOTER_NAV.main.map((link) => (
-                <a
-                  key={link}
-                  href="#"
+                <Link
+                  key={link.label}
+                  to={link.href}
                   className="text-base font-medium text-white transition-opacity hover:opacity-70"
                 >
-                  {link}
-                </a>
+                  {link.label}
+                </Link>
               ))}
             </div>
 
             {/* Column 4: Secondary Nav */}
             <div className="flex flex-col gap-3">
               {FOOTER_NAV.secondary.map((link) => (
-                <a
-                  key={link}
-                  href="#"
+                <Link
+                  key={link.label}
+                  to={link.href}
                   className="text-base font-medium text-white transition-opacity hover:opacity-70"
                 >
-                  {link}
-                </a>
+                  {link.label}
+                </Link>
               ))}
             </div>
 
             {/* Column 5: Legal + Hours */}
             <div className="flex flex-col gap-3">
               {FOOTER_NAV.legal.map((link) => (
-                <a
-                  key={link}
-                  href="#"
+                <Link
+                  key={link.label}
+                  to={link.href}
                   className="text-base font-medium text-white transition-opacity hover:opacity-70"
                 >
-                  {link}
-                </a>
+                  {link.label}
+                </Link>
               ))}
               <div className="mt-6 text-white">
                 <p className="text-base font-medium">Mo—Fr</p>
@@ -140,6 +159,7 @@ export function Footer() {
                     key={social.label}
                     icon={social.icon}
                     label={social.label}
+                    href={social.href}
                   />
                 ))}
               </div>

@@ -13,6 +13,7 @@
  */
 
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const SERVICES = [
   "3D Render Design",
@@ -80,13 +81,13 @@ export function ServicesCard() {
                 <p className="text-white/65 text-sm leading-relaxed">
                   Delivering digital experiences through versatile subscription
                 </p>
-                <a
-                  href="#"
+                <Link
+                  to="/services"
                   className="group inline-flex items-center gap-2 text-white font-bold text-xs uppercase tracking-[0.15em] hover:gap-3 transition-all duration-300 border-b-2 border-brand-primary pb-1 hover:text-brand-primaryLight"
                 >
                   LEARN MORE
                   <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
