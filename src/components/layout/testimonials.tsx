@@ -130,7 +130,7 @@ export function Testimonials() {
         {/* Quote with Fill Effect */}
         <div className="space-y-2 mb-16">
           {TESTIMONIAL_LINES.map((line, index) => (
-            <div key={index} className="relative overflow-hidden text-center">
+            <div key={index} className="relative text-center">
               {/* Gray text (background) */}
               <div className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-black/20">
                 {line}
@@ -138,7 +138,7 @@ export function Testimonials() {
 
               {/* Black text (foreground with clip) */}
               <div
-                className="absolute top-0 left-0 right-0 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-black whitespace-nowrap"
+                className="absolute top-0 left-0 right-0 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-black pointer-events-none"
                 style={{
                   clipPath: `inset(0 ${100 - getLineFillPercentage(index)}% 0 0)`
                 }}

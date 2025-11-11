@@ -78,7 +78,7 @@ export function AboutSection() {
             {/* Main Text with Line-by-Line Fill Effect */}
             <div className="space-y-2">
               {TEXT_LINES.map((line, index) => (
-                <div key={index} className="relative overflow-hidden">
+                <div key={index} className="relative">
                   {/* Gray text (background) */}
                   <div className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-black/20">
                     {line}
@@ -86,7 +86,7 @@ export function AboutSection() {
 
                   {/* Black text (foreground with clip) */}
                   <div
-                    className="absolute top-0 left-0 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-black whitespace-nowrap"
+                    className="absolute top-0 left-0 right-0 text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-black pointer-events-none"
                     style={{
                       clipPath: `inset(0 ${100 - getLineFillPercentage(index)}% 0 0)`
                     }}

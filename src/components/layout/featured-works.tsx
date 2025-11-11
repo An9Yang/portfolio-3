@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 type Project = {
   id: string;
   title: string;
@@ -66,30 +68,32 @@ function ProjectCard({ project }: { project: Project }) {
     project.aspect === "wide" ? "aspect-[4/3]" : "aspect-[5/4]";
 
   return (
-    <article className="group overflow-hidden rounded-xl border border-black/5 bg-white shadow-card hover:shadow-cardHover transition-all duration-500 hover:-translate-y-2">
-      <div className={`relative overflow-hidden ${aspectClass}`}>
-        <img
-          src={project.image}
-          alt={project.imageAlt}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-      </div>
-      <div className="flex items-end justify-between gap-6 px-6 pb-7 pt-6 md:px-8">
-        <h3 className="text-lg font-semibold text-black md:text-xl transition-colors duration-200 group-hover:text-brand-primary">
-          {project.title}
-        </h3>
-        <div className="flex flex-col items-end text-right text-black">
-          <span className="text-base font-semibold md:text-lg">
-            {project.year}
-          </span>
-          <span className="text-xs font-medium text-black/65 md:text-sm">
-            {project.category}
-          </span>
+    <Link to={`/project/${project.id}`}>
+      <article className="group overflow-hidden rounded-xl border border-black/5 bg-white shadow-card hover:shadow-cardHover transition-all duration-500 hover:-translate-y-2 cursor-pointer">
+        <div className={`relative overflow-hidden ${aspectClass}`}>
+          <img
+            src={project.image}
+            alt={project.imageAlt}
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>
-      </div>
-    </article>
+        <div className="flex items-end justify-between gap-6 px-6 pb-7 pt-6 md:px-8">
+          <h3 className="text-lg font-semibold text-black md:text-xl transition-colors duration-200 group-hover:text-brand-primary">
+            {project.title}
+          </h3>
+          <div className="flex flex-col items-end text-right text-black">
+            <span className="text-base font-semibold md:text-lg">
+              {project.year}
+            </span>
+            <span className="text-xs font-medium text-black/65 md:text-sm">
+              {project.category}
+            </span>
+          </div>
+        </div>
+      </article>
+    </Link>
   );
 }
 
