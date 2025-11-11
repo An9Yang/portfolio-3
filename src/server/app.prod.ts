@@ -4,16 +4,20 @@ import { setupRoutes } from "./routes";
 
 const app = new Hono();
 
-const presevePaths = ["/static", "/favicon.svg", "/api"];
+// Paths that should be served as-is (static files and API routes)
+const preservePaths = ["/static", "/favicon.svg", "/api"];
 
+// Serve static files with SPA fallback for client-side routing
 app.use(
   "*",
   serveStatic({
     root: `web`,
     rewriteRequestPath(path) {
-      if (presevePaths.some((p) => path.startsWith(p))) {
+      // If it's a static file or API route, serve it directly
+      if (preservePaths.some((p) => path.startsWith(p))) {
         return path;
       }
+      // Otherwise, return root path which serves index.html (SPA fallback)
       return "/";
     },
   }),

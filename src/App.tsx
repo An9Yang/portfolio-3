@@ -7,19 +7,25 @@ import { lazy, Suspense } from "react";
 // Eager load home page for best initial experience
 import Index from "./pages/home";
 
-// Lazy load other pages for better code splitting
+// Lazy load all pages for optimal code splitting and performance
 const WorkPage = lazy(() => import("./pages/work"));
 const AboutPage = lazy(() => import("./pages/about"));
 const ServicesPage = lazy(() => import("./pages/services"));
 const BlogPage = lazy(() => import("./pages/blog"));
 const ContactPage = lazy(() => import("./pages/contact"));
+
+// Detail pages
 const ProjectDetailPage = lazy(() => import("./pages/project-detail"));
 const BlogDetailPage = lazy(() => import("./pages/blog-detail"));
+
+// Legal and auxiliary pages
 const PrivacyPolicyPage = lazy(() => import("./pages/privacy-policy"));
 const TermsOfServicePage = lazy(() => import("./pages/terms-of-service"));
 const StyleguidePage = lazy(() => import("./pages/styleguide"));
 const ChangelogPage = lazy(() => import("./pages/changelog"));
 const LicensePage = lazy(() => import("./pages/license"));
+
+// Error page
 const NotFound = lazy(() => import("./pages/404"));
 
 const queryClient = new QueryClient();
